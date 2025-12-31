@@ -169,6 +169,31 @@ canvas {
     text-shadow: 0 0 20px #FFD700, 0 0 40px #FF8C00, 0 0 60px #FF4D4D;
 }
 .hidden { display: none !important; }
+#author-tag {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--gold-tet);
+    opacity: 0.8;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-top: 1px dashed rgba(255, 215, 0, 0.3);
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    animation: glow 2s infinite alternate;
+}
+
+.author-text {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px rgba(255, 215, 0, 0.2); }
+    to { text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+}
 </style>
 </head>
 <body>
@@ -184,10 +209,13 @@ canvas {
 
 <div id="card" onclick="toggleHeart()">
     <div class="avatar-wrap">
-        <img src="https://topanh.com/wp-content/uploads/2025/05/con-tho-hoat-hinh-de-thuong-2.jpg" class="person-img">
+        <img src="ảnh.png" class="person-img">
         <div id="heart" class="heart-icon">❤</div>
     </div>
     <div class="wish-box" id="wish-box"></div>
+    <div id="author-tag">
+    🧧 <span class="author-text">Thiết kế bởi Lê Đức Trung</span> 🧧
+    </div>
     <div id="wish-note" onclick="toggleHeart(event)">Nhấn vào đây để nhận "vạn tim" ❤️</div>
 </div>
 
@@ -306,7 +334,7 @@ class Emoji {
 for (let i = 0; i < 20; i++) deco.push(new Petal());
 for (let i = 0; i < 10; i++) deco.push(new Emoji());
 
-const wishes = ["Gửi [Tên Người Nhận] 🎀", "Năm Bính Ngọ 2026 🐎", "Mã đáo thành công 🎉", "Vạn sự như ý 🍀", "Tiền vào tỷ tỷ 💰"];
+const wishes = ["Gửi [người bí ẩn ❤ ] 🎀", "Năm Bính Ngọ 2026 🐎", "Mã đáo thành công 🎉", "Vạn sự như ý 🍀", "Tiền vào tỷ tỷ 💰"];
 
 function openMagic() {
     document.getElementById('intro-screen').style.opacity = '0';
